@@ -4,6 +4,9 @@ import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import About from "./components/About";
 import NoteState from "./context/notes/NoteState";
+import Alert from "./components/Alert";
+import Login from "./components/Login";
+import SignUp from "./components/SignUp";
 
 function App() {
   return (
@@ -11,6 +14,7 @@ function App() {
       <NoteState>
         <Router>
           <Navbar />
+          <Alert message={"inoteBook is Amazing App"}/>
           <div className="container">
             <Switch>
               <Route exact path="/">
@@ -18,6 +22,12 @@ function App() {
               </Route>
               <Route exact path="/about">
                 <About />
+              </Route>
+              <Route exact path="/login">
+                <Login/>
+              </Route>
+              <Route exact path="/signup">
+                <SignUp/>
               </Route>
             </Switch>
           </div>

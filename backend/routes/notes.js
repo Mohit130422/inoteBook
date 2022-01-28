@@ -19,7 +19,7 @@ router.get('/fetchallnotes', fetchuser, async (req, res) => {
 })
 
 //ROUTE 2:- Save Login User all notes: POST /api/notes/addnote/ "login required.."
-router.get('/addnote', fetchuser, [
+router.post('/addnote', fetchuser, [
     body('title', 'Enter Valid Title').isLength({ min: 3 }),
     body('description', 'Description must be Atleast have 5 Characters').isLength({ min: 5 }),
 ], async (req, res) => {
